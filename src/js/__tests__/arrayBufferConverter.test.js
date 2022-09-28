@@ -15,5 +15,5 @@ test('', () => {
   converter.load(buffer);
   const received = converter.toString();
   const expected = '{"data":{"user":{"id":1,"name":"Hitman","level":10}}}';
-  expect(received).toBe(expected);
+  expect(received).toEqual(expected);
 });
