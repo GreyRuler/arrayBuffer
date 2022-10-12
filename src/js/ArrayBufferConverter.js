@@ -1,16 +1,22 @@
 export default class ArrayBufferConverter {
-  constructor() {
-    this.buffer = undefined;
-  }
+    constructor() {
+        this.buffer = undefined;
+    }
 
-  load(buffer) {
-    this.buffer = buffer;
-  }
+    load(buffer) {
+        this.buffer = buffer;
+    }
 
-  toString() {
-    return new Uint8Array(this.buffer).reduce((str, item) => {
-      str += String.fromCharCode(item);
-      return str;
-    }, '');
-  }
+    toString() {
+        return new Uint16Array(this.buffer).reduce((str, item) => {
+            str += String.fromCharCode(item);
+            return str;
+        }, '');
+
+        // let str = '';
+        // this.buffer.forEach(item => {
+        //     str.push(item)
+        // })
+        // return str
+    }
 }
